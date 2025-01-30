@@ -9,6 +9,7 @@ use App\Http\Controllers\Approval\FlowTypeController;
 use App\Http\Controllers\Approval\SettingsController;
 use App\Http\Controllers\ApprovalsController;
 use App\Http\Controllers\AritmatikaController;
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\Recommendation\LogController;
 use App\Http\Controllers\Recommendation\Quota\Generator\ScheduleController;
 use App\Http\Controllers\Recommendation\QuotaController;
@@ -47,3 +48,7 @@ route::get("/recommendation/sel-expired", [QuotaController::class, "selExpired"]
 route::get("/recommendation/log", [LogController::class, "insertLog"]);
 route::get("/recommendation/interval", [ScheduleController::class, "interval"]);
 route::get("/recommendation/action/type", [RecommendationTypeActionsController::class, "actionType"]);
+
+
+
+route::get("/car/forward/{merk}/{type}/{colors}/{jarak}", [CarController::class, "moveForward"]);

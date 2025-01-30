@@ -11,7 +11,7 @@ class QuotaController
         return "ini add quota";
     }
 
-    public function remoceQuota()
+    public function removeQuota()
     {
         return "ini remove quota";
     }
