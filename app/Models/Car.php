@@ -61,4 +61,25 @@ class Car extends Model
     {
         echo "Tarik / turunkan rem tangan";
     }
+
+    public function percepat()
+    {
+        echo "kendaraan dipercepat";
+    }
+
+
+    public function rem()
+    {
+        echo "Menginjak pedal rem";
+    }
+
+    public function isi_bahan_bakar(string $jumlah)
+    {
+        echo "Isi bahan bakar sebanyak $jumlah liter";
+    }
+
+    public function cek_status_bahan_bakar()
+    {
+        echo "status bahan bakar dicek";
+    }
 }

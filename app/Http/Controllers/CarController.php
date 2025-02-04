@@ -22,4 +22,28 @@ class CarController
 
         echo "Mobil dengan merk $merk ber type $type dan berwarna telah berjalan selauh " . $mobil->posisi . ' yard';
     }
+
+    public function percepat()
+    {
+        $mobil = new Car();
+        return $mobil->percepat();
+    }
+
+    public function rem()
+    {
+        $mobil = new Car();
+        return $mobil->rem();
+    }
+    public function isiBensin($jumlah)
+    {
+        $mobil = new Car();
+        return $mobil->isi_bahan_bakar($jumlah);
+    }
+
+
+    public function indikator()
+    {
+        $mobil = new Car();
+        return $mobil->cek_status_bahan_bakar();
+    }
 }
