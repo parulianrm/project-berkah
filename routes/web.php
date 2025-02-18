@@ -23,6 +23,9 @@ use App\Http\Controllers\RecommendationTypeActionsController;
 use App\Http\Controllers\RestoranController;
 use App\Http\Controllers\ResultController;
 use App\Models\Kalkulator;
+use App\Models\Komputer;
+use App\Models\Motor;
+use App\Models\Mouse;
 use Illuminate\Support\Facades\Route;
 
 route::get("/aritmatika/penambahan/{angka1}/{angka2}", [AritmatikaController::class, 'penambahan']);
@@ -95,3 +98,35 @@ route::get("/car/percepat", [CarController::class, "percepat"]);
 route::get("/car/rem", [CarController::class, "rem"]);
 route::get("/car/isiBensin/{jumlah}", [CarController::class, "isiBensin"]);
 route::get("/car/indikator", [CarController::class, "indikator"]);
+
+
+Route::get('nyalakanKomputer', function () {
+
+    $komputer = new Komputer('Komputer 1', 16);
+
+    $komputerDua = new Komputer('Komputer 2', 16);
+
+    $komputer->nyalakanKomputer();
+
+    echo $komputer->status;
+    echo $komputerDua->status;
+
+    // $komputer->matikanKomputer();
+});
+
+
+Route::get('remMereun', function () {
+    $motor = new Motor('Honda', 'Matic', 'Ungu Tosca', 'Brembo');
+
+    echo $motor->remMereun();
+});
+
+
+Route::get('contohMouse', function () {
+
+    // instance
+    $mouse = new Mouse();
+    $komputer = new Komputer($mouse);
+
+    $komputer->mouse->move();
+});
